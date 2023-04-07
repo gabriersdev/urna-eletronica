@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Urna Eletrônica</title>
+<!-- <link rel="stylesheet" href="./assets/css/frameworks/bootstrap.css"> -->
+<link rel="stylesheet" href="./assets/css/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+<link rel="stylesheet" href="./assets/img/som-urna.png">
+<script src="./assets/js/script.js" defer></script>
+<script src="./assets/js/frameworks/sweet-alert.js" defer></script>
+<script src="./assets/js/frameworks/bootstrap.js" defer></script>
+<script src="./assets/js/frameworks/jquery.js" defer></script>
+</head>
+<body> 
+<div class="container">
+<div class="row justify-content-center align-items-center vh-100">
+<div class="col-2">
+<div class="objeto-centro">
+<center><button onclick="" id="btn-saiba-mais" class="btn-resultado"><a href="#comoFunciona">Como funciona?</a></button></td></center><br>
+<audio src="./assets/som/som-urna.mp3" id="som-musica" controls style="display: none;"></audio>
+
+<!--Tabela que é a urna-->
+<table id="urna" name="urna">
+<tr>
+<td colspan="3" name="painel" class="painel">
+<input type="text" id="painel-n1" placeholder="0" maxlength="1" value="" pattern="[0-9]{1}">
+<input type="text" id="painel-n2" placeholder="0" maxlength="1" value="" pattern="[0-9]{1}">
+</td>
+</tr>
+<tr>
+<td id="7" class="btn btn-numero" onclick="btnNum('7')"><button style="padding: 5px; color: white;">7</button></td>
+<td id="8" class="btn btn-numero" onclick="btnNum('8')"><button style="padding: 5px; color: white;">8</button></td>
+<td id="9" class="btn btn-numero" onclick="btnNum('9')"><button style="padding: 5px; color: white;">9</button></td>
+</tr>
+<tr>
+<td id="4" class="btn btn-numero" onclick="btnNum('4')"><button style="padding: 5px; color: white;">4</button></td>
+<td id="5" class="btn btn-numero" onclick="btnNum('5')"><button style="padding: 5px; color: white;">5</button></td>
+<td id="6" class="btn btn-numero" onclick="btnNum('6')"><button style="padding: 5px; color: white;">6</button></td>
+</tr>
+<tr>
+<td id="1" class="btn btn-numero" onclick="btnNum('1')"><button style="padding: 5px; color: white;">1</button></td>
+<td id="2" class="btn btn-numero" onclick="btnNum('2')"><button style="padding: 5px; color: white;">2</button></td>
+<td id="3" class="btn btn-numero" onclick="btnNum('3')"><button style="padding: 5px; color: white;">3</button></td>
+</tr>
+<tr>
+<td id="" class="btn" style="border:1px solid transparent;"><button style="color:transparent;">0</button=></td>
+<td id="0" class="btn btn-numero" onclick="btnNum('0')"><button style="padding: 5px; color: white;">0</button=></td>
+<td id="" class="btn" style="border:1px solid transparent;"><button style="color:transparent;">0</button=></td>
+</tr>
+<tr>
+<td id="btn-branco" class="btn btn-branco" onclick="computar('branco')"><button style="color: black;">Branco</button=></td>
+<td id="0" class="btn btn-corrige" onclick="corrige()"><button style="color: white">Corrige</button=></td>
+<td id="btn-confirma" class="btn btn-confirma" onclick="computar('valor')"><button style="color: white">Confirma</button=></td>
+</tr>
+</table>
+<br><center><button onclick="resultados()" id="btn-resultado" class="btn-resultado"><a href="#bg">Resultado Apurado</a></button></td></center>
+</div>
+</div>
+</div>
+<div class="alert-box success"><input type="text" required id="msg-success" class="msg" readonly></input></div>
+<div class="alert-box failure"><input type="text" required id="msg-failure" class="msg" readonly></input></div>
+<div class="alert-box warning"><input type="text" required id="msg-warning" class="msg" readonly></div>
+
+<div id="bg"></div>
+<div class="bg-conteudo">
+<div class="bg-box">
+<a href="" id="bg-close">X</a>	
+<div class="bg-conteudo-modal">	
+<h1>Resultado Apurado</h1>
+<p id="campo-resultado">
+</p>
+
+<button onclick="limpaSessao()" class="btn-resultado" style="font-size: 10pt; border-bottom: none;">Limpar Sessão <i class="fa-solid fa-trash"></i></button>
+</div>
+</div>
+</div>
+<div id="comoFunciona"></div>
+<div class="cF-conteudo">
+<div class="cF-box">
+<a href="" id="cF-close">X</a>	
+<div class="cF-conteudo-modal">	
+<h1>Como funciona?</h1>
+<p>
+A Urna eletrônica grava os votos brancos ou válidos localmente através da sessão. <br> Isso significa que, ao apagar os dados de navegação, os votos aqui armazenados são zerados.
+
+</p>
+</div>
+</div>
+</div>
+</div> <!-- Fim da DIV Container -->
+
+</body>
+</html>
