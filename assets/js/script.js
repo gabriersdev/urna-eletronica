@@ -1,3 +1,9 @@
+document.querySelectorAll('[data-recarrega-pagina]').forEach(botao => {
+  botao.addEventListener('click', () => {
+      window.location.reload();
+  })
+})
+
 function feedback(status, action){
   if(status == "on"){
     if(action == "success"){
